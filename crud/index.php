@@ -47,7 +47,7 @@
                             <button type="submit" class="btn btn-outline-info text-white">UPDATE</button>
                      </form>
                      <form action ="show.php" class="w-30" method="post">
-                     <input type="hidden" name= "id" value="' . $row["media_id"] . '" />
+                     <input type="hidden" name= "media_id" value="' . $row["media_id"] . '" />
                      <button type="submit" class="btn btn-outline-success text-white">SHOW MORE</button>
               </form>
                 </div>

@@ -3,9 +3,9 @@
 require_once 'actions/db_connect.php';
 
 if ($_POST['media_id']) {
-   $id = $_POST['media_id'];
+   $media_id = $_POST['media_id'];
 
-   $sql = "SELECT * FROM media WHERE media_id = {$id}" ;
+   $sql = "SELECT * FROM media WHERE media_id = {$media_id}" ;
    $result = $conn->query($sql);
 
    $data = $result->fetch_assoc();
@@ -26,7 +26,7 @@ if ($_POST['media_id']) {
         <div class="row justify-content-center">
             <div class="col-6 justify-content-center mt-3 bg-dark p-4 rounded">
                 <h1 class="mb-4 text-center">UPDATE!</h1>
-                <form action="insertdb.php" method="POST">
+                <form action="actions/a_update.php" method="POST">
                     <div class="row">
                         <div class="form-group col">
                             <label for="title">Title</label>
@@ -100,7 +100,7 @@ if ($_POST['media_id']) {
                             <label for="female">Reserved</label><br>
                     </div>
                     <div class="d-flex flex-column">
-                        <input type= "hidden" name= "media_id" value= "<?php echo $data['id']?>" />
+                        <input type= "hidden" name= "media_id" value= "<?php echo $data['media_id']?>" />
                         <button class="btn bg-info text-white text-center"  type= "submit">Save Changes</button >
                         <a href= "index.php"><button class="btn bg-info text-white w-100 mt-3 text-center" type="button" >Back</button ></a>
                     </div>
